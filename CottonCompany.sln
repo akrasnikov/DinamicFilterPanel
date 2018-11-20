@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CottonCompany", "CottonCompany\CottonCompany.csproj", "{716FB851-F1EF-494C-AA9E-1D3439E05E5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testEFCore", "testEFCore\testEFCore.csproj", "{769B19E7-B97B-4A1C-88C5-9B42E499F9DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{716FB851-F1EF-494C-AA9E-1D3439E05E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716FB851-F1EF-494C-AA9E-1D3439E05E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716FB851-F1EF-494C-AA9E-1D3439E05E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716FB851-F1EF-494C-AA9E-1D3439E05E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{769B19E7-B97B-4A1C-88C5-9B42E499F9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{769B19E7-B97B-4A1C-88C5-9B42E499F9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{769B19E7-B97B-4A1C-88C5-9B42E499F9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{769B19E7-B97B-4A1C-88C5-9B42E499F9DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4ECDA53A-F62E-4821-94AE-9F60871490BC}
+	EndGlobalSection
+EndGlobal
