@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>CottonCompany</RootNamespace>
     <AssemblyName>CottonCompany</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -145,18 +145,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\cottonContext.cs" />
-    <Compile Include="cottonDataSet.cs">
-      <DependentUpon>cottonDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="cottonDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>cottonDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Domain\DeliveryService.cs" />
+    <Compile Include="Model\CottonContext.cs" />
     <Compile Include="Domain\ILoginService.cs" />
     <Compile Include="Domain\LoginService.cs" />
     <Compile Include="Model\ApplicationContext.cs" />
+    <Compile Include="Model\DeliveryRepository.cs" />
+    <Compile Include="Model\IRepository.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\NDelivery.cs" />
     <Compile Include="Model\NFilter.cs" />
@@ -169,7 +164,17 @@
     <Compile Include="Presentation\Comon\IContainer.cs" />
     <Compile Include="Presentation\Comon\IPresenter.cs" />
     <Compile Include="Presentation\Comon\IView.cs" />
-    <Compile Include="Presentation\LoginPresenter.cs" />
+    <Compile Include="Presentation\Presenters\DeliveryPresenter.cs" />
+    <Compile Include="Domain\IDeliveryService.cs" />
+    <Compile Include="Presentation\Presenters\LoginPresenter.cs" />
+    <Compile Include="Presentation\UserInterface\DeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\UserInterface\DeliveryForm.Designer.cs">
+      <DependentUpon>DeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\UserInterface\IFormationControl.cs" />
+    <Compile Include="Presentation\View\IDeliveryView.cs" />
     <Compile Include="Presentation\UserInterface\LightInjectAdapder.cs" />
     <Compile Include="Presentation\UserInterface\LoginForm.cs">
       <SubType>Form</SubType>
@@ -187,6 +192,9 @@
     <Compile Include="Presentation\View\IMainView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\UserInterface\DeliveryForm.resx">
+      <DependentUpon>DeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\UserInterface\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,17 +211,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="cottonDataSet.xsc">
-      <DependentUpon>cottonDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="cottonDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>cottonDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="cottonDataSet.xss">
-      <DependentUpon>cottonDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -228,9 +225,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentation\Presenters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

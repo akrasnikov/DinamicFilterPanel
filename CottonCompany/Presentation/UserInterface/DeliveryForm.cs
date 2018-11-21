@@ -42,7 +42,7 @@ namespace CottonCompany.Presentation.UserInterface
             CottonContext db = new CottonContext();
             System.Reflection.MemberInfo[] memberlist = typeof(CottonContext).GetMembers();
 
-            
+            var mySet = db.Set(Type.GetType("<Your Entity Name>"));
 
             PropertyDescriptor descr = TypeDescriptor.GetProperties(db)["NDelivery"];
             descr.SetValue(db, 777);

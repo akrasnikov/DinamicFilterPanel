@@ -8,10 +8,8 @@ namespace CottonCompany.Model
 {
     public partial class CottonContext : DbContext
     {
-        
         public CottonContext()
         {
-           
         }
 
         public CottonContext(DbContextOptions<CottonContext> options)
